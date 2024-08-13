@@ -14,11 +14,15 @@ app.use(cors(
 ));
 
 
-app.get('/proxy/:year/:interest', async (req, res) => {
-  const { year, interest } = req.params;
-  const response = await fetch(`https://itihaas-ai-api.vercel.app/${year}/${interest}`);
-  const data = await response.json();
-  res.json(data);
+app.get("/:year?/:interest", async function (req, res) {
+  try{
+    const obj = await run(req.params.year,req.params.interest);
+    res.send(obj);
+    console.log("data sent to client");
+  }
+  catch(error){
+    res.status(500).send("error : invalid response from gemini");
+  }
 });
 
 app.listen(3000, ()=>{
