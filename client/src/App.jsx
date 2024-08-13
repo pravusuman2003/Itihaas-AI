@@ -12,7 +12,7 @@ function App() {
 
     e.preventDefault();
     
-    let url=`http://localhost:3000`;
+    let url=`https://itihaas-ai-api.vercel.app`;
     if(year) url+=`/${year}`;
     if(interest) url+=`/${interest}`;
     
