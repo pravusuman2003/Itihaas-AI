@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Event from './Event.jsx';
 import './App.css';
 
 function App() {
   const [year,setYear]=useState('');
   const [interest,setInterest]=useState('');
-  const [result,setResult]=useState('');
+  const [result,setResult]=useState(null);
+  const [error,setError]=useState('');
 
   const SubmitForm= async(e) => {
 
@@ -20,25 +22,37 @@ function App() {
         throw new Error();
       else
         console.log("fetch successfull");
-      const data= await response.json();
-      setResult(data);
+        let data= await response.json();
+        setResult(data);
+        setError(null);
      }
     catch{
       console.log("fetching unsuccessful");
-      setResult(error.message);
+      setError(error.message);
+      setResult(null);
     }
   };
 
   return (
     <>
+      <h2>Itihaas AI</h2>
       <form action="" onSubmit={SubmitForm}>
         <input type="number" id='year' value={year} onChange={(e)=> setYear(e.target.value)} placeholder='Enter Year'/>
         <input type="text" id='interest' value={interest} onChange={(e)=> setInterest(e.target.value)} placeholder='Enter your interests'/>
         <button type="submit" >Go back in time</button>
-        <div>
-          {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
-        </div>
       </form>
+      <div className='events-container'>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+        {result && result.length > 0 && (
+          <>
+            {result.map((event, index) => (
+              <div key={index} className='event-box'>
+                <Event title={event.title} description={event.description} />
+              </div>
+            ))}
+          </>
+        )}
+      </div>
     </>
   )
 }

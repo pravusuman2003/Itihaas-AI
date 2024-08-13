@@ -8,7 +8,7 @@ async function run(year,interest) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   const prompt =
-    "Give me 3 most Significant events that occured in the year " +
+    "Give me Significant events that occured in the year " +
     year +
     " in the field of "
     +interest+
