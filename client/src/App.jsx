@@ -12,12 +12,12 @@ function App() {
 
     e.preventDefault();
     
-    let url=`http://localhost:3000`;
+    let url=`https://itihaas-ai-api.vercel.app`;
     if(year) url+=`/${year}`;
     if(interest) url+=`/${interest}`;
     
     try{
-      const response= await fetch(url);
+      const response= await fetch(url,{ mode: 'no-cors' });
       if(!response.ok)
         throw new Error();
       else

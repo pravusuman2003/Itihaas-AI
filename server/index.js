@@ -5,7 +5,13 @@ const { run } = require("./gemini.js");
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+    origin: ["https://itihaas-ai.vercel.app"],
+    methods: ["POST","GET"],
+    credentials:true
+  }
+));
 
 
 app.get('/proxy/:year/:interest', async (req, res) => {
