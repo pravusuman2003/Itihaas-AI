@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors(
     {
-    origin: ["https://itihaas-ai.vercel.app/"],
+    origin: ["https://itihaas-ai.vercel.app"],
     methods: ["POST","GET"],
     credentials:true
   }
