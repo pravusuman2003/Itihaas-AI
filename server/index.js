@@ -15,9 +15,10 @@ app.use(cors(
 
 
 app.get("/:year?/:interest", async function (req, res) {
+  console.log("inside get");
   try{
     const obj = await run(req.params.year,req.params.interest);
-    res.send(obj);
+    res.json(obj);
     console.log("data sent to client");
   }
   catch(error){
