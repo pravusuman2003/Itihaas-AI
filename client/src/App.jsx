@@ -17,7 +17,7 @@ function App() {
     if(interest) url+=`/${interest}`;
     
     try{
-      const response= await fetch(url,{ mode: 'no-cors' });
+      const response= await fetch(url);
       if(!response.ok)
         throw new Error();
       else
