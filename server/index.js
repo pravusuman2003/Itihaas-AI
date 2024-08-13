@@ -25,6 +25,6 @@ app.get("/:year?/:interest", async function (req, res) {
   }
 });
 
-app.listen(itihaas-ai-api.vercel.app, ()=>{
+app.listen(3000, ()=>{
   console.log("server started successfully");
 });
