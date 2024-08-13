@@ -19,6 +19,6 @@ app.get("/:year?/:interest", async function (req, res) {
   }
 });
 
-app.listen(3000, ()=>{
+app.listen(https://itihaas-ai.vercel.app/, ()=>{
   console.log("server started successfully");
 });
