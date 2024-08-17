@@ -21,13 +21,13 @@ h2 {
     background-color: #805a4c;
     color: white;
     text-align: center;
-    width: 100vw; /* Full viewport width */
+    width: 100vw;
     margin: 0;
     padding: 1em;
     position: sticky;
     top: 0;
     box-sizing: border-box;
-    font-size: 2em; /* Adjust font size as needed */
+    font-size: 2em;
 }
 
 form {
@@ -63,7 +63,8 @@ input[type="text"]:focus {
 }
 
 button {
-    width: 100%;
+    width: 45%;
+    margin: 5px;
     padding: 15px;
     background-color: #af8d81;
     color: #fff;
@@ -98,4 +99,12 @@ button:hover {
     width: 100%;
     text-align: center;
     font-size: 1em;
+}
+@media only screen and (max-width: 600px){
+    form {
+        max-width: 300px;
+    }
+    button{
+        width: 100%;
+    }
 }

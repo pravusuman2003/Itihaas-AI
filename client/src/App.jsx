@@ -13,8 +13,8 @@ function App() {
     e.preventDefault();
     
     let url=`https://itihaas-ai-api.vercel.app`;
-    if(year) url+=`/${year}`;
-    if(interest) url+=`/${interest}`;
+    if(year) url+=`/${year}`; else url+=`random year`;
+    if(interest) url+=`/${interest}`; else url+=`random interest`;
     
     try{
       const response= await fetch(url);
@@ -39,8 +39,11 @@ function App() {
       <form action="" onSubmit={SubmitForm}>
         <input type="number" id='year' value={year} onChange={(e)=> setYear(e.target.value)} placeholder='Enter Year'/>
         <input type="text" id='interest' value={interest} onChange={(e)=> setInterest(e.target.value)} placeholder='Enter your interests'/>
+        <div className='buttons'>
         <button type="submit" >Go back in time</button>
-      </form>
+        <button type="submit" >I am feeling lucky</button>
+        </div>
+        </form>
       <div className='events-container'>
       {error && <p style={{ color: 'red' }}>{error}</p>}
         {result && result.length > 0 && (
