@@ -1,3 +1,1 @@
-Readme
-
-Members: Pravu, Jyoti, Sai, Vaibhav
+Itihaas AI is an interactive web application that allows users to explore historical events based on a specified year and area of interest. Users can input a particular year and interest to discover related historical events or choose to explore random events with the "I am feeling lucky" feature. The app dynamically fetches and displays information, providing an engaging way to learn about history.
