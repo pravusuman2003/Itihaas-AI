@@ -46,7 +46,7 @@ function App() {
         <input type="text" id='interest' value={interest} onChange={(e) => setInterest(e.target.value)} placeholder='Enter your interests' />
         <div className='buttons'>
           <button type="submit">Go back in time</button>
-          <button type="button" onClick={(e) => SubmitForm(e, true)}>I am feeling lucky</button>
+          {/* <button type="button" onClick={(e) => SubmitForm(e, true)}>I am feeling lucky</button> */}
         </div>
       </form>
       <div className='events-container'>
