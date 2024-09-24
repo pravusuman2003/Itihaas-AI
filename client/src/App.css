@@ -1,66 +1,110 @@
-* {
-  margin: 0;
-  padding: 0;
-  /* border: 1px solid red; */
-}
-/* #0077ab */
-body {
-  height: 100vh;
-  width: 100vw;
-  min-height: 100vh;
-  background-image: url("./assets/bg.png");
-  background-size: cover;
-  background-position: center;
-  font-family: "Times New Roman", Times, serif;
-}
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
-.heading {
-  background-color: rgb(186, 99, 0);
-  padding: 2rem;
-  background: rgba(165, 42, 42, 0.471);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  margin-bottom: 1rem;
+body {
+    font-family: "Playfair Display SC", serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./assets/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 h2 {
-  color: white;
-  letter-spacing: 0.5rem;
-  text-align: center;
+    background-color: #805a4c;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    margin: 0;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    font-size: 2em;
 }
 
 form {
-  padding: 1rem 2rem;
-  margin: auto auto;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  background: rgba(222, 222, 255, 0.471);
-  box-shadow: 0 0 10rem rgb(255, 255, 255);
-  backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
 }
-input {
-  margin: 1rem;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  border: none;
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    font-family: "Playfair Display SC", serif;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #987544;
+    box-shadow: 0 0 5px rgba(152, 117, 68, 0.5);
 }
 
 button {
-  margin: 1rem;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: rgb(255, 130, 108);
+    width: 45%;
+    margin: 5px;
+    padding: 15px;
+    background-color: #af8d81;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: #805a4c;
+}
+
+.events-container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
 }
 
 .event-box {
-  padding: 1rem 2rem;
-  margin: auto auto;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  background: rgba(222, 222, 255, 0.471);
-  box-shadow: 0 0 10rem rgb(255, 255, 255);
-  backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+}
+@media only screen and (max-width: 600px){
+    form {
+        max-width: 300px;
+    }
+    button{
+        width: 100%;
+    }
 }
