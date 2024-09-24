@@ -67,13 +67,13 @@ function App() {
       <div className="events-container">
         {error && <p style={{ color: "red" }}>{error}</p>}
         {result && result.length > 0 && (
-          <div className="event-container">
+          <>
             {result.map((event, index) => (
               <div key={index} className="event-box">
                 <Event title={event.title} description={event.description} />
               </div>
             ))}
-          </div>
+          </>
         )}
       </div>
     </>
