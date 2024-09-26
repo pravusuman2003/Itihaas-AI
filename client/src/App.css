@@ -1,86 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
+
+:root {
+  --fontheading: "Uncial Antiqua", system-ui;
+  --fontgeneral: "IM Fell Great Primer SC", serif;
+}
+
 * {
   margin: 0;
   padding: 0;
-  /* border: 1px solid red; */
 }
-/* #0077ab */
 body {
   height: 100vh;
-  width: 100vw;
-  min-height: 100vh;
-  background-image: url("./assets/bg.png");
+  font-family: var(--fontgeneral);
+  background: fixed;
   background-size: cover;
   background-position: center;
-  font-family: "Times New Roman", Times, serif;
+  background-image: linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.741),
+      rgba(255, 119, 0, 0.182)
+    ),
+    url("./assets/bg.png");
+  background-repeat: no-repeat;
+  /* overflow-y: auto; */
+}
+body > div {
+  position: relative;
+}
+.heading {
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  padding: 2rem 0;
+  position: fixed;
+  color: white;
+  background-color: rgba(97, 22, 9, 0.721);
+  font-family: var(--fontheading);
+  backdrop-filter: blur(1rem);
+  box-shadow: 1px 1px 10px black;
 }
 
 .heading {
-  background-color: rgb(186, 99, 0);
-  padding: 2rem;
-  background: rgba(165, 42, 42, 0.471);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  margin-bottom: 1rem;
 }
 
-h2 {
-  color: white;
-  letter-spacing: 0.5rem;
+.heading h1 {
   text-align: center;
+  letter-spacing: 0.5rem;
+  text-shadow: 4px 4px black;
 }
 
 form {
-    background-color: rgba(255, 255, 255, 0.75);
-    margin: auto;
-    margin-top: 10px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-input[type="number"],
-input[type="text"] {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 40px;
-    box-sizing: border-box;
-    font-size: 1.2em;
-    font-family: "Playfair Display SC", serif;
-}
-
-input[type="number"]:focus,
-input[type="text"]:focus {
-    outline: none;
-    border-color: #987544;
-    box-shadow: 0 0 5px rgba(152, 117, 68, 0.5);
-}
-
-button {
-    width: 45%;
-    margin: 5px;
-    padding: 15px;
-    background-color: #af8d81;
-    color: #fff;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-.event-box {
+  margin: 4rem 3rem;
+  margin-top: 10rem;
+  height: fit-content;
   padding: 1rem 2rem;
-  margin: auto auto;
+  backdrop-filter: blur(0.2rem);
+  box-shadow: 1px 1px 10px black;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  background: rgba(222, 222, 255, 0.471);
-  box-shadow: 0 0 10rem rgb(255, 255, 255);
-  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.248);
+}
+
+form input {
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 1rem 1rem;
+  border: none;
+  font-family: var(--fontgeneral);
+}
+
+form button {
+  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  width: max-content;
+  border: none;
+  text-shadow: 1px 1px black;
+  font-family: var(--fontgeneral);
+  color: white;
+  background-color: brown;
+}
+
+form button:hover {
+  background-color: rgb(158, 0, 0);
+}
+
+.event-container {
+  height: fit-content;
+  backdrop-filter: blur(0.2rem);
+  box-shadow: 1px 1px 10px black;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem 0rem;
+  margin: 4rem 3rem;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.248);
+}
+.event-box {
+  background-color: rgba(165, 42, 42, 0.645);
+  width: 15rem;
+  height: min-content;
+  padding: 1rem 0.5rem;
+}
+
+.event-box div h3 {
+  font-family: var(--fontheading);
 }

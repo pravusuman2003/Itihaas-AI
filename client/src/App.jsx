@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Event from './Event.jsx';
-import './App.css';
+import React, { useState } from "react";
+import Event from "./Event.jsx";
+import "./App.css";
 
 function App() {
-  const [year, setYear] = useState('');
-  const [interest, setInterest] = useState('');
+  const [year, setYear] = useState("");
+  const [interest, setInterest] = useState("");
   const [result, setResult] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const SubmitForm = async (e, random = false) => {
     e.preventDefault();
@@ -15,18 +15,19 @@ function App() {
 
     if (random) {
       // If "I am feeling lucky" button was clicked
-      url += '/random year/random interest';
+      url += "/random year/random interest";
     } else {
       // If primary button was clicked
-      if (year) url += `/${year}`; else url += '/random year';
-      if (interest) url += `/${interest}`; else url += '/random interest';
+      if (year) url += `/${year}`;
+      else url += "/random year";
+      if (interest) url += `/${interest}`;
+      else url += "/random interest";
     }
 
     try {
       const response = await fetch(url);
-      if (!response.ok)
-        throw new Error('Failed to fetch data');
-      
+      if (!response.ok) throw new Error("Failed to fetch data");
+
       console.log("fetch successful");
       let data = await response.json();
       setResult(data);
@@ -40,25 +41,39 @@ function App() {
 
   return (
     <>
-      <h2>Itihaas AI</h2>
+      <div className="heading">
+        <h1>ITIHAAS</h1>
+      </div>
       <form onSubmit={(e) => SubmitForm(e, false)}>
-        <input type="number" id='year' value={year} onChange={(e) => setYear(e.target.value)} placeholder='Enter Year' />
-        <input type="text" id='interest' value={interest} onChange={(e) => setInterest(e.target.value)} placeholder='Enter your interests' />
-        <div className='buttons'>
-          <button type="submit">Go back in time</button>
+        <input
+          type="number"
+          id="year"
+          value={year}
+          onChange={(e) => setYear(e.target.value)}
+          placeholder="Enter Year"
+        />
+        <input
+          type="text"
+          id="interest"
+          value={interest}
+          onChange={(e) => setInterest(e.target.value)}
+          placeholder="Enter Your Interests"
+        />
+        <div className="buttons">
+          <button type="submit">Go Back In Time</button>
           {/* <button type="button" onClick={(e) => SubmitForm(e, true)}>I am feeling lucky</button> */}
         </div>
       </form>
-      <div className='events-container'>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+      <div className="events-container">
+        {error && <p style={{ color: "red" }}>{error}</p>}
         {result && result.length > 0 && (
-          <>
+          <div className="event-container">
             {result.map((event, index) => (
-              <div key={index} className='event-box'>
+              <div key={index} className="event-box">
                 <Event title={event.title} description={event.description} />
               </div>
             ))}
-          </>
+          </div>
         )}
       </div>
     </>
