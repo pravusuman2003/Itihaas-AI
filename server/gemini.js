@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 async function run(year,interest) {
   // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const prompt =
     "Give me Significant events that occured in the year " +
